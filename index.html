@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía - Sistemas de Base de Datos</title>
+    <style>
+        :root {
+            --color-primary: #2563eb;
+            --color-secondary: #8b5cf6;
+            --color-accent: #ec4899;
+            --color-light: #f3f4f6;
+            --color-dark: #1f2937;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: var(--color-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .system {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            background: var(--color-light);
+            transition: transform 0.3s ease;
+        }
+        
+        .system:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .system-abc {
+            border-top: 5px solid var(--color-primary);
+        }
+        
+        .system-ecommerce {
+            border-top: 5px solid var(--color-accent);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--color-dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 20px 0 10px;
+            color: var(--color-primary);
+        }
+        
+        .system-abc h3 {
+            color: var(--color-primary);
+        }
+        
+        .system-ecommerce h3 {
+            color: var(--color-accent);
+        }
+        
+        ul {
+            list-style-type: none;
+            margin-left: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--color-primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .system-ecommerce li:before {
+            color: var(--color-accent);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .system-abc .feature {
+            border-left: 3px solid var(--color-primary);
+        }
+        
+        .system-ecommerce .feature {
+            border-left: 3px solid var(--color-accent);
+        }
+        
+        .methodology {
+            background: white;
+            padding: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            background: var(--color-light);
+            border-radius: 8px;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--color-dark);
+            color: white;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistemas de Gestión de Base de Datos</h1>
+            <p class="subtitle">Modelado de bases de datos para tienda ABC y e-commerce de electrónicos</p>
+        </header>
+        
+        <div class="content">
+            <div class="system system-abc">
+                <h2><i>📦</i> Sistema ABC - Gestión de Inventario</h2>
+                <p>Sistema de registro de entrada y salida de electrodomésticos con control de inventario y gestión de proveedores.</p>
+                
+                <h3>Entidades Principales</h3>
+                <ul>
+                    <li>Electrodomésticos (nombre, descripción, marca, precios)</li>
+                    <li>Proveedores (información relevante)</li>
+                    <li>Órdenes de Compra (fecha, hora, monto total)</li>
+                    <li>Detalles de Entrada/Salida (cantidad, subtotal)</li>
+                    <li>Clientes y Comprobantes</li>
+                </ul>
+                
+                <h3>Características Técnicas</h3>
+                <div class="features">
+                    <span class="feature">Sistema de signos (±)</span>
+                    <span class="feature">Cálculo automático de subtotales</span>
+                    <span class="feature">Relación órdenes-detalles</span>
+                    <span class="feature">Trazabilidad completa</span>
+                </div>
+            </div>
+            
+            <div class="system system-ecommerce">
+                <h2><i>🛒</i> E-commerce Electrónicos</h2>
+                <p>Plataforma de comercio electrónico para venta de productos electrónicos con gestión de pedidos y reseñas.</p>
+                
+                <h3>Entidades Principales</h3>
+                <ul>
+                    <li>Productos (nombre, descripción, precio, stock)</li>
+                    <li>Categorías (organización de productos)</li>
+                    <li>Marcas (fabricantes con país de origen)</li>
+                    <li>Clientes (email único, múltiples direcciones)</li>
+                    <li>Pedidos (seguimiento de estados)</li>
+                    <li>Opiniones (sistema de calificaciones)</li>
+                </ul>
+                
+                <h3>Características Técnicas</h3>
+                <div class="features">
+                    <span class="feature">Relaciones 1-a-muchos</span>
+                    <span class="feature">Múltiples direcciones</span>
+                    <span class="feature">Sistema de reseñas (1-5 estrellas)</span>
+                    <span class="feature">Gestión de estados de pedido</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="methodology">
+            <h2>Metodología y Herramientas</h2>
+            <p>Proceso de desarrollo de bases de datos con análisis de requerimientos, diseño conceptual, normalización y validación.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Análisis</h3>
+                    <p>Estudio de requerimientos y casos de uso</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Diseño</h3>
+                    <p>Modelado entidad-relación</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Normalización</h3>
+                    <p>Eliminación de redundancias</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Validación</h3>
+                    <p>Pruebas de integridad y consistencia</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Tecnologías Utilizadas</h3>
+            <div class="features">
+                <span class="feature">Lucidchart</span>
+                <span class="feature">GitHub</span>
+                <span class="feature">MySQL</span>
+                <span class="feature">Normalización</span>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="logo">EQUIPO LOS CHAMOS</div>
+            <p>Taller 1.1 - Modelado de Bases de Datos | Universidad Andina del Cusco</p>
+        </footer>
+    </div>
+</body>
+</html>
